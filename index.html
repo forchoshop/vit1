@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Webiarch</title>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+        <!--google material-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;subset=devanagari,latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="js/flexcrollstyles.css">
+        <link rel="stylesheet" type="text/css" href="js/tutorsty.css">
+
+        <!--bootstrap-->
+        <link href="javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+        <link href="javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+        <script type="text/javascript" src="javascript/bootstrap/js/bootstrap.min.js"></script>
+        <!--custom-->
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript">
+            function headermenu() {
+                if (jQuery(this).scrollTop() > 1000) {
+                    jQuery('header').addClass("fixed");
+                    jQuery('ul.docs-nav').addClass("fixed");
+                    jQuery('footer').addClass("fixed");
+                } else
+                {
+                    jQuery('header').removeClass("fixed");
+                    jQuery('ul.docs-nav').removeClass("fixed");
+                    jQuery('footer').removeClass("fixed");
+                }
+                if (jQuery('ul.docs-nav li ul.installation li a').hasClass("active")) {
+                    jQuery('ul.docs-nav li ul.installation').addClass("in");
+                    jQuery('ul.docs-nav li ul.common-modules').removeClass("in");
+                    jQuery('ul.docs-nav li ul.layouts').removeClass("in");
+                } else if (jQuery('ul.docs-nav li ul.common-modules li a').hasClass("active")) {
+                    jQuery('ul.docs-nav li ul.common-modules').addClass("in");
+                    jQuery('ul.docs-nav li ul.installtion').removeClass("in");
+                    jQuery('ul.docs-nav li ul.layouts').removeClass("in");
+                } else if (jQuery('ul.docs-nav li ul.layouts li a').hasClass("active")) {
+                    jQuery('ul.docs-nav li ul.layouts').addClass("in");
+                    jQuery('ul.docs-nav li ul.installtion').removeClass("in");
+                    jQuery('ul.docs-nav li ul.common-modules').removeClass("in");
+                } else {
+                    jQuery('ul.docs-nav li ul.collapse').removeClass("in");
+                }
+            }
+            $(document).ready(function () {
+                headermenu();
+            });
+            jQuery(window).resize(function () {
+                headermenu();
+            });
+            jQuery(window).scroll(function () {
+                headermenu();
+            });
+        </script>
+
+        <script src="js/layout.js"></script>
+        <script src="js/flexcroll.js"></script>
+
+
+    </head>
+    <body>
+        <div>
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="bcg"
+                         data-center="background-position: 50% 10px;"
+                         data-top-bottom="background-position: 50% -200px;"
+                         data-bottom-top="background-position: 50% 200px;"
+                         >
+                        <div class="parellax-content">
+                            <h1>WELCOME TO MAXDINO ELECTRONIC THEME</h1>
+                            <h3>RESPONSIVE SHOPIFY THEME</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <header>
+                <div class="container-fluid">
+                    <div class="row"><div class="col-sm-12 top"></div></div>
+                    <div class="row header-bottom">
+                        <div class="col-sm-6">
+                            <h1><a href="#welcome" class="cc-active">Getting Started</a></h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="pull-right logo">
+                                <img src="image/logo.png" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="container-fluid inner">
+                <div class="wrapper">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-sm-2 custom">
+                                <ul class="docs-nav">
+                                    <li><a href="#start" class="cc-active has-child collapse">
+                                            Step1 : Installation
+                                        </a>
+                                        <ul class="installation collapse">
+                                            <li><a href="#common-steps">1.1. Installation(Common Steps)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#language" class="cc-active">Step2 : Language Settings</a></li>
+                                    <li><a href="#color-setting" class="cc-active">Step3 : color Setting</a></li>
+                                   
+                                    <li><a class="cc-active has-child collapse" href="#add-page">
+                                            Step4 : Add pages
+                                        </a>
+                                    </li>
+                                    <li><a href="#header" class="cc-active">Step5 : Header</a></li>
+                                    <li><a href="#mega" class="cc-active">Step6 : Mega Menu</a></li>
+                                    <li><a href="#toprated" class="cc-active">Step7 : Toprated</a></li>
+                                    <li><a href="#testimonial" class="cc-active">Step8 : Testimonial</a></li>
+                                    <li><a href="#newsletter" class="cc-active">Step9 : Newsletter</a></li>
+                                    <li><a href="#onsale" class="cc-active">Step10 : Onsale</a></li>
+                                    <li><a href="#slider" class="cc-active">Step11 : Slider</a></li>
+                                    <li><a href="#bestseller" class="cc-active">Step12 : Bestseller</a></li>
+                                    <li><a href="#treding" class="cc-active">Step13 : Treding Product</a></li>
+                                    <li><a href="#imgbanner" class="cc-active">Step14 : Img Banner</a></li>
+                                    <li><a href="#special" class="cc-active">Step15 : Special</a></li>
+                                    <li><a href="#offerbanner" class="cc-active">Step16 : Offer Banner</a></li>
+                                    <li><a href="#blog" class="cc-active">Step17 : Blog</a></li>
+                                    <li><a href="#logo" class="cc-active">Step18 : Logo Slider</a></li>
+                                    <li><a href="#footer" class="cc-active">Step19 : Footer</a></li>
+                                    <li><a href="#tag" class="cc-active">Step20 : Collection tag</a></li>
+                                    <li><a href="#review" class="cc-active">Step21 : Product Review</a></li>
+                                    <li><a href="#currency" class="cc-active">Step22 : Multiple Currency</a></li>
+                                    <li><a href="#help" class="cc-active">Step23 : Need More Help?</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-10 custom">
+                                <div class="doc-content">
+                                    <!--step1:-->
+                                    <div id="start">
+                                        <h2>Step1 : Installation </h2>
+
+                                        <!--1.-->
+                                        <h3 id="common-steps">Installation (Common Steps)</h3>
+                                        <p class="red">-Please, read the whole section, before attempting to install the theme.</br>
+                                            -it is recommend to always backup your system before making any upgrades or changes!
+                                        </p>
+
+                                         <h3>Read shopify manual before you start</h3>
+                                         <ul>
+                                                <li><a href="https://docs.shopify.com/manual">Manual</a></li>
+                                                <li><a href="https://docs.shopify.com/manual/your-website/themes/install-theme">Installing a new theme</a></li>
+                                                <li><a href="https://docs.shopify.com/manual/settings/general">General settings </a></li>
+                                                <li><a href="https://docs.shopify.com/manual/your-website/pages/create-page">Create a page</a></li>
+                                                <li><a href="https://docs.shopify.com/manual/your-website/navigation">Navigation</a></li>
+                                                <li><a href="https://docs.shopify.com/manual/your-store/products">Products</a></li>
+                                                <li><a href="https://docs.shopify.com/manual/your-store/collections">Collections</a></li>
+                                                <li><a href="https://docs.shopify.com/manual/your-website/blog-posts">Blog</a></li>
+                                                <li><a href="https://docs.shopify.com/manual/your-website/themes/customize">Customizing your theme</a></li>
+                                                 <li><a href="https://help.shopify.com/manual/sell-online/checkout-settings/checkout-style">Customizing checkout page</a></li>
+                                                <li><a href="https://docs.shopify.com/manual/your-website/themes/translate-theme">Translating your theme into another language</a></li>
+                                            </ul>   
+
+                                         <h3>Getting Started</h3>
+                                            <ul>
+                                                <li> Getting up and running with Maxdino Store is quick and easy. Simply create a Shopify account, purchase the theme and upload it. You'll then have the opportunity to customize it to your liking before publishing it as your main theme.</li>
+                                     
+                                                <h5>Creating a Shopify Account</h5>
+
+                                                <li>If you already have a Shopify account, then you can skip ahead to the next section. If you're considering setting up a store but haven't done so yet, read on.</li>
+                                                
+                                            </ul>            
+
+                                              <h4 class="blue">1.1 Install with Template Package:</h4>
+                                        <!--2.-->
+                                        <h3> Upload Theme Files</h3>
+                                        <p>After you complete the installation of Shopify, please follow below steps to install themes</p>
+                                        <ul>
+                                            <li><span>Step 1 </span>- Unzip the <span>Maxdino.zip</span> package.</li>
+                                        </ul>
+
+
+                                        <div class="doc-img">
+                                            <img src="image/installation/doc.png" class="img-responsive">
+                                        </div>
+
+                                        <ul>
+
+                                        <li>To install the theme, please log in to your Shopify store and go to the Themes. From there, follow the instruction below:</li>
+
+                                        <li>1. In your back office go to: Online Store > Themes:</li>
+                                        <li>2. Click: Upload a theme</li>
+                                        <div class="doc-img">
+                                            <img src="image/installation/install.png" class="img-responsive">
+                                        </div>
+                                        <li>Click on Choose File button and select install.zip file, then click: Upload</li>
+                                        <div class="doc-img">
+                                            <img src="image/installation/publish.png" class="img-responsive">
+                                        </div>
+                                        <li>Click on: Publish</li>
+                                        </ul>
+                                    </div>
+                                    <hr>
+                                  
+                                    <!--step2:-->
+                                    <div id="language">
+                                        <h3>Step 2 : Language Settings </h3>
+                                        <p>To Edit Laguages login to your admin panel  and do follwing settings.</p>
+                                        <ul>
+                                            <li>As per Shopify language translation supporting feature, we need to keying all the text based information on Language Editor section, so that we have loaded all this information with the same. Kindly refer the following screen shot to know about editing this information. Just go to your store's theme section and confirm which theme is going to be the primary one (Published theme), Then do the followings...</li>
+                                        </ul>
+                                        <div class="doc-img">
+                                            <img src="image/logo-lang/language.png" class="img-responsive">
+                                        </div>
+                                        <div class="doc-img">
+                                            <img src="image/logo-lang/change-language.png" class="img-responsive">
+                                        </div>
+
+                                    </div>
+                                    <hr>
+                                    <!--step3:-->
+                                    <div id="color-setting">
+                                        <h3>Step3 : Color settings </h3>
+                                        <ul>
+                                            <li><h5>For Color setting , Go to  Online Store > Customize > Theme Settings Edit > Color, </h5></li>
+                                        </ul>
+                                        <ul>
+                                           <li>In this section, you choose the colors for your site. It includes background colors for sections like the menu bar and footer, as well as text colors. Let's explore the options:</li>
+
+                                            <li>The Primary Color option controls your main text color, various interface colors, button colors, and more. It is well used throughout your site. The color you choose here should contrast with both a white background and the background color you choose for the outer site section.</li>
+                                            <li>The Secondary Color is used for alternate text color and other places.</li>
+                                            <li>The Link/Button hover color will appear when you hover over most links and buttons. </li>
+                                        </ul>
+                                        <div class="doc-img">
+                                            <img src="image/logo-lang/color-1.png" class="img-responsive">
+                                        </div>
+                                        <div class="doc-img">
+                                            <img src="image/logo-lang/color-2.png" class="img-responsive">
+                                        </div>
+
+                                    </div>
+                                    <hr>
+                                    <!--step4:-->
+                                    <div id="add-page">
+                                        <h3>Step4 : Add Pages </h3>
+                                        <li>From your shop admin, go to the Online Store / Pages</li>
+                                        <div class="doc-img">
+                                            <img src="image/logo-lang/pages.png" class="img-responsive">
+                                        </div>
+                                        <ul>
+                                            <li><span>ADD PAGE WISHLIST</span></li>
+                                            <li>In a Online Store / Pages, find and click button "Add a page"</li>
+                                            <li>Write in Title field as " wishlist</li>
+                                            <li>Select Visibility: Visible</li>
+                                            <li>Select Template: page.wishlist</li>
+                                            <li>Click save</li>
+                                            <div class="doc-img">
+                                                <img src="image/logo-lang/wishlist.png" class="img-responsive">
+                                            </div>
+
+                                        </ul>
+                                        <ul>
+                                            <li><span>ADD PAGE CONTACT</span></li>
+                                            <li>In a Online Store / Pages, find and click button "Add a page"</li>
+                                            <li>Write in Title field as " contact</li>
+                                            <li>Select Visibility: Visible</li>
+                                            <li>Select Template: page.wishlist</li>
+                                            <li>Click save</li>
+                                            <div class="doc-img">
+                                                <img src="image/logo-lang/contact.png" class="img-responsive">
+                                            </div>
+
+                                        </ul>
+                                        <ul>
+                                            <li><span>ADD PAGE ABOUT</span></li>
+                                            <li>In a Online Store / Pages, find and click button "Add a page"</li>
+                                            <li>Write in Title field as " About</li>
+                                            <li>Select Visibility: Visible</li>
+                                            <li>Select Template: page</li>
+                                            <li>Click save</li>
+                                            <div class="doc-img">
+                                                <img src="image/logo-lang/about.png" class="img-responsive">
+                                            </div>
+                                        </ul>
+                                        <ul>
+                                            <li><span>Create all page like Information,Terms and Condition, Policy so on like About us</span></li>
+                                        </ul>
+                                    <hr>
+                                    <!--step5:-->
+                                    <div id="header">
+                                        <h3>Step 5 : Header</h3>
+                                    </div>
+                                    <ul>
+                                        <li>From your shop admin, go to the Online Store Customize -> Section -> Header</li>
+                                        <li>change your header setting as your Requirement</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/header.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step6:-->
+                                    <div id="mega">
+                                        <h3>Step 6 : Mega Menu Setting</h3>
+                                    </div>
+                                    <ul>
+                                        
+                                        <li>Step 1: From your Shopify admin, click Online Store, then click Navigation</li>
+                                        <li>Step 2: Select the Add menu button.</li>
+                                        <li>Step 3: Give your navigation a title. A handle will automatically be generated from this title.</li>
+                                        <li>Step 4: Add links to your menu.</li>
+                                        <li>Step 5: Click "Save" after adding all the required links.</li>
+                                        <div class="doc-img">
+                                            <img src="image/modules/megamenu-1.png" class="img-responsive">
+                                        </div>
+                                        <li>Step 6: To design Mega menu go to Theme Setting -> Navigation</li>
+                                        <div class="doc-img">
+                                            <img src="image/modules/megamenu-2.png" class="img-responsive">
+                                        </div>
+                                        <li>Now To add mega menu for perticular menu</li>
+                                        <div class="doc-img">
+                                            <img src="image/modules/megamenu-3.png" class="img-responsive">
+                                        </div>
+                                        <li>note: Here 5 Diffrent style Mega menu avilabe use for your Requirement</li>
+
+                                    </ul>
+                                    <hr>
+                                    <!--step7:-->
+                                    <div id="toprated">
+                                        <h3>Step 7 : Toprated</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Toprated Product go to section -> Toprated in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/toprated.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step8:-->
+                                    <div id="testimonial">
+                                        <h3>Step 8 : Testimonial</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Testimonial go to section -> Testimonial in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/testimonial.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step9:-->
+                                    <div id="newsletter">
+                                        <h3>Step 9 : Newsletter</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Newsletter go to section -> Newsletter in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/newsletter.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step10:-->
+                                    <div id="onsale">
+                                        <h3>Step 10 : Onsale</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Onsale Product go to section -> Onsale in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/onsale.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                     <!--step11:-->
+                                    <div id="slider">
+                                        <h3>Step 11 : Slider</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Slider go to section in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/slider.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step12:-->
+                                    <div id="bestseller">
+                                        <h3>Step 12 : Bestseller</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Bestseller Product go to section -> Bestseller in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/bestseller.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+
+                                    <!--step13:-->
+                                    <div id="treding">
+                                        <h3>Step 13 : Treding Product</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Trading Product go to section -> Featured in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/treding.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step14:-->
+                                    <div id="imgbanner">
+                                        <h3>Step 14 : Img Banner</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Img Banner go to section -> Img Banner in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/imgbanner.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step15:-->
+                                    <div id="special">
+                                        <h3>Step 15 : Special</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Special Product go to section -> Special Product in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/special.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step16:-->
+                                    <div id="offerbanner">
+                                        <h3>Step 16 : Offer Banner</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Offer Banner go to section -> Offer Banner in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/offerbanner.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+	
+                                      <!--step17:-->
+                                    <div id="blog">
+                                        <h3>Step 17 : Blog</h3>
+                                    </div>
+                                    <ul>
+                                        <li>To add blog Go to Blog Post add create blog</li>
+                                        <li>Click On :add blog post button </li>
+                                         <div class="doc-img">
+                                            <img src="image/modules/blog-1.png" class="img-responsive">
+                                        </div>
+                                        <li>For Edit Blog go to section -> Latest Blog in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/blog.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+                                    <!--step18:-->
+                                    <div id="logo">
+                                        <h3>Step 18 : Logo Slider</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Logo Slider go to section -> Logo List in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/logo.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+
+                                    <!--step19:-->
+                                    <div id="footer">
+                                        <h3>Step 19 : Footer</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Footer go to section -> Footer in your online store</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/footer.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+
+                                     <!--step20:-->
+                                    <div id="tag">
+                                        <h3>Step 20 : Tag For Collection Page</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Edit Tag go to section</li>
+                                    </ul>
+                                    <div class="doc-img">
+                                        <img src="image/modules/tag.png" class="img-responsive">
+                                    </div>
+                                    <hr>
+
+
+                                    <!--step21:-->
+                                    <div id="review">
+                                        <h3>Step 21 : Product Review</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Add Product review go to this Link <a href="https://apps.shopify.com/product-reviews">Product Review</a></li>
+                                        <li>Click On Get Button</li>
+                                        <li>Click On Install App</li>
+                                        <li>Click On Verify and continue Button</li>
+                                        <div class="doc-img">
+                                        <img src="image/modules/review.png" class="img-responsive">
+                                        </div>
+
+                                    </ul>
+                                    <hr>
+                                     <!--step22:-->
+                                    <div id="currency">
+                                        <h3>Step 22 : Multi Currency</h3>
+                                    </div>
+                                    <ul>
+                                        <li>For Add Product review go to this Link <a href="https://apps.shopify.com/multi-currency">Multi Currency</a></li>
+                                        <li>Click On Get Button</li>
+                                        <li>Click On Install App</li>
+                                        <li>Click On Add Currency and Add Multiple Currency</li>
+                                        <li>Click On Request Code Update</li>
+                                        <div class="doc-img">
+                                            <img src="image/modules/addcurrency.png" class="img-responsive">
+                                        </div>
+                                        <li>Click On Request Expert Install</li>
+                                         <div class="doc-img">
+                                            <img src="image/modules/expert.png" class="img-responsive">
+                                        </div>
+                                        <li>Click On Ok Button</li>
+                                        <li>Now, Go to Setting -> General -> Standards and formats</li>
+                                        <li> Click On Change Formatting </li>
+                                        <li>Now, change Following under Currency Formatting</li>
+                                         <div class="doc-img">
+                                            <img src="image/modules/cur-formate.png" class="img-responsive">
+                                        </div>
+                                    </ul>
+                                    <hr>
+
+                                     <!--step23.-->
+                                    <h3 id="help">Step 23 : Need More Help?</h3>
+                                    <p>For More Help Show Tutorial:<br>
+                                   	<a href="https://youtu.be/OuSNKzB8Z6s">Live Demo Part-1</a><br>
+									<a href="https://youtu.be/AhaAsctsTBs">Live Demo Part-2</a></p>
+                                    <p>Thank you for reading!
+                                        We hope you can create the best website with our themes.
+                                        If you have any questions that are beyond the scope of this guide, please feel free to 
+                                        <a href="https://webiarch.freshdesk.com/">contact us.</a></p>
+
+                                    <!--over-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="container-fluid inner">
+                <div class="brd">
+                    <p class="text-center"> &copy; All Rights Reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
+
