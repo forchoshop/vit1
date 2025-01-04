@@ -1,0 +1,46 @@
+{% unless grid_item_width  %}
+{% assign grid_item_width = 'wide--one-third large--one-third medium-down--one-half' %}
+{% endunless %}
+{% if template contains 'product' %}
+{% assign grid_item_width = '' %}
+{% endif %}
+{% unless current_collection == blank %}
+{% assign current_collection = collection %}
+{% endunless %}
+{% assign on_sale = false %}
+{% assign sale_text = 'products.product.sale' | t %}
+{% if product.compare_at_price > product.price %}
+{% assign on_sale = true %}
+{% endif %}
+{% assign sold_out = true %}
+{% assign sold_out_text = 'products.product.sold_out' | t %}
+{% if product.available %}
+{% assign sold_out = false %}
+{% endif %}
+<li class="leftpro item-row  {{grid_item_width}}{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}" id="product-{{ product.id }}" {% if template contains 'index' %} {% if forloop.index > section.settings.total_products_load %} style="display:none"  data-wow-duration="1{{ forloop.index }}" {% endif %}{% endif %}>
+<div class="product-container col-xs-12">  
+
+<div class="imgblock col-xs-4">
+{% if product.images.size > 1 %}   
+<a href="{{ product.url }}"><img class="" src="{{ product.images.first | product_img_url: 'large' }}" alt="{{ product.images.first.alt | escape }}" /></a>
+<a href="{{ product.url }}"><img src="{{ product.images[1] | img_url: 'large' }}" class="second-img featured-image" alt="{{ product.images[1].alt | escape }}"> </a>
+{% else %}
+<a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url: 'large' }}" class="featured-image" alt="{{ product.featured_image.alt | escape }}"></a>
+{% endif %}
+</div>
+
+<div class="wbproductdes col-xs-8">
+  <div class="shopify-product-reviews-badge" data-id="{{ product.id }}"></div>
+  <h5><a href="{{ product.url | within: collection }}" class="grid-link__title">{{ product.title }}</a></h5>
+    <div class="product_price">
+      {% capture price %}<span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="{{ product.price }}" style="display:none !important;"></span>{{ product.price | money }}{% endcapture %}
+      <span>{% if product.price_varies %}{{ price }}{% else %}{{ price }}{% endif %}</span>
+      {% if on_sale %}<span class="dis-price"><span class="Bold-theme-hook-DO-NOT-DELETE bold_product_compare_price" data-override-value-set="1" data-override-value="{{ product.compare_at_price }}" style="display:none !important;"></span>{{ product.compare_at_price | money }}</span>{% endif %}
+    </div>      
+    
+    {% include 'item-swatch' %}
+</div>
+
+</div>
+</li>
+

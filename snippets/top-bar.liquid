@@ -1,0 +1,72 @@
+<div class="top_bar top-bar">  
+  <div class="container">
+    <div class="row">
+    <div class="wrapper mobile-nav-section hidden-sm hidden-md hidden-lg col-xs-2">
+    <button type="button" class="mobile-nav-trigger" id="MobileNavTrigger">
+      <span class="icon-menu" aria-hidden="true"></span>    
+    </button>  
+  </div>
+  {% include 'mobile-nav' %}
+    <div class="col-sm-5 col-xs-12 hidden-xs">      
+      <ul class="list-inline list-unstyled">
+        {% if section.settings.display_header_social %}
+        <li class="header_social">     
+          {% include 'social-links' %}
+        </li>
+        {% endif %}      
+      </ul>        
+    </div>
+
+    <div class="col-sm-7 col-xs-10 text-right">
+          <ul class="list-unstyled list-inline">
+           <li class="">{% include 'bold-common' %}{%- include 'bold-currency-picker-mount', openDirection: 'down' -%}
+            </li>{% if section.settings.display_wishlist %}<li>{% include 'wish-list' %}</li>{% endif %}<li>
+             
+               <div class="slidedown_section">
+                    <a  id="Togglemodal">{% include 'icon-login' %} {{ 'layout.customer.account' | t }}<i class="fa fa-angle-down"></i></a>
+                    <div id="acdrop">
+                      <div class="header-panel-top">
+                  
+                  <div class="customer_account text-left">                          
+                    <ul class="list-unstyled">
+                {% if customer %}
+                <li>
+                  <a href="/account">
+                    <i class="fa fa-user"></i>
+                    {{ 'layout.customer.account' | t }}
+                  </a>
+                </li>
+                <li>
+                  <a href="/account/logout">
+                   <i class="fa fa-sign-out"></i>
+                    {{ 'layout.customer.log_out' | t }}
+                  </a>
+                </li>
+                {% else %}
+                <li>
+                  <a href="/account/login">
+                    <i class="fa fa-lock"></i>
+                    {{ 'layout.customer.log_in' | t }}
+                  </a>
+                </li>
+                <li>
+                  <a href="/account/register" title="{{ 'layout.customer.create_account' | t }}">
+                    <i class="fa fa-user"></i>
+                  {{ 'layout.customer.create_account' | t }}
+                  </a>
+                </li>  
+                {% endif %}
+              </ul>
+                  </div>    
+               
+                      </div>
+                    </div>
+                 </div>
+
+
+            </li>
+          </ul>   
+    </div>
+</div>
+  </div>
+</div>

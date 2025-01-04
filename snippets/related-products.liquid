@@ -1,0 +1,63 @@
+{% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+  {% assign found_a_collection = false %}
+  {% for c in product.collections %}
+    {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' and c.all_products_count > 1 %}
+      {% assign found_a_collection = true %}
+      {% assign collection = c %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if collection and collection.products_count > 1 %}
+<div class="relpro">
+    {% if settings.related_prds_title != blank or settings.related_prds_heading  %}
+            <h1 class="heading"><span>{{ settings.related_prds_heading }}</span></h1>
+            {% endif %}  
+          <div class="allbgc">   
+  <ul class="related-products">
+    {% assign current_product = product %}
+    {% assign current_product_found = false %}
+    {% for product in collection.products %}
+      {% if product.handle == current_product.handle %}
+        {% assign current_product_found = true %}
+      {% else %}
+        {% unless current_product_found == false and forloop.last %}
+          {% assign grid_item_width = 'wide--one-quarter post-large--one-quarter large--one-quarter medium--one-quarter small--one-half' %}
+          {% include 'product-grid-item' %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+          <div class="nav_featured slidebtn">
+            <a class="prev"><i class="fa fa-angle-left" ></i></a><a class="next"><i class="fa fa-angle-right" ></i></a> 
+          </div>
+        </div>
+</div>
+{% endif %}
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      var related = $(".related-products");
+      related.owlCarousel({
+        itemsCustom : [
+        [0, 1],
+        [375, 2],
+        [600, 3],
+        [768, 2],
+        [992, 3],
+        [1200, 4]
+      ],
+      navigation : false,
+      pagination:false
+      });
+      // Custom Navigation Events
+      $(".nav_featured .next").click(function(){
+        related.trigger('owl.next');
+      })
+      $(".nav_featured .prev").click(function(){
+        related.trigger('owl.prev');
+      }) 
+  });
+      
+</script>
